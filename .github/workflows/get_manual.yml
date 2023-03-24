@@ -35,5 +35,14 @@ jobs:
         run: |
          git config --local user.email "silencess_m@qq.com"
          git config --local user.name "RedShakespeare"
-         git add .
+         git add -A
          git commit -m "update manual"
+         
+      - name: Push changes
+        uses:  ad-m/github-push-action@master
+        with:
+         github_token: ${{ secrets.MY_GIT_TOKEN }}
+         branch: main
+
+
+
